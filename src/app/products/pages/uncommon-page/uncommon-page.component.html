@@ -1,0 +1,49 @@
+<p-panel header="Pipes Poco Comunes" class="p-1">
+  <div >
+    Pipes incluídos en Angular - Usualmente en el Common Module
+  </div>
+</p-panel>
+
+<div class="grid">
+
+  <div class="col-12 md:col-6">
+   <p-fieldset legend="i18n Select Pipe" [toggleable]="true">
+      Hola {{ name }}!! 😊, es un gusto poder {{gender | i18nSelect:invitationMap}} a nuestro evento.🙌🎉
+   <br> <br>
+      <p-button (Click)="ChangeClient()"
+   label="Cambiar">
+  </p-button>
+
+  </p-fieldset>
+   </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="i18n Plural Pipe" [toggleable]="true">
+      <p>Actualmente contamos con
+        {{dogs.length | i18nPlural:dogsMap}}</p>
+      <p-button (click)="DeleteClient()" label="-1"></p-button>
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+
+    </p-fieldset>
+  </div>
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="JSON Pipe" [toggleable]="true">
+
+    </p-fieldset>
+  </div>
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+
+    </p-fieldset>
+  </div>
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+
+    </p-fieldset>
+  </div>
+
+</div>

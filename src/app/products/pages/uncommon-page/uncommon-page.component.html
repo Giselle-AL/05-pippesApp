@@ -7,15 +7,12 @@
 <div class="grid">
 
   <div class="col-12 md:col-6">
-   <p-fieldset legend="i18n Select Pipe" [toggleable]="true">
+    <p-fieldset legend="i18n Select Pipe" [toggleable]="true">
       Hola {{ name }}!! 😊, es un gusto poder {{gender | i18nSelect:invitationMap}} a nuestro evento.🙌🎉
-   <br> <br>
-      <p-button (Click)="ChangeClient()"
-   label="Cambiar">
-  </p-button>
-
-  </p-fieldset>
-   </div>
+        <br> <br>
+      <p-button (onClick)="ChangeClient()"label="Cambiar"> </p-button>
+    </p-fieldset>
+  </div>
 
   <div class="col-12 md:col-6">
     <p-fieldset legend="i18n Plural Pipe" [toggleable]="true">
@@ -26,22 +23,38 @@
   </div>
 
   <div class="col-12 md:col-6">
-    <p-fieldset legend="Slice Pipe" [toggleable]="true">
 
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <p>Original</p>
+      <p>{{dogs}}</p>
+      <p>Slice:0:4</p>
+      <p>{{dogs | slice:0:4}}</p>
+      <p>Slice:3:4</p>
+      <p>{{dogs | slice:3:4}}</p>
     </p-fieldset>
   </div>
   <div class="col-12 md:col-6">
     <p-fieldset legend="JSON Pipe" [toggleable]="true">
-
+      <pre>{{person | json}}
+      </pre>
     </p-fieldset>
   </div>
   <div class="col-12 md:col-6">
     <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
-
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+           <b>{{item.key | titlecase}}</b>:{{item.value}}
+        </li>
+      </ul>
     </p-fieldset>
   </div>
   <div class="col-12 md:col-6">
     <p-fieldset legend="Async Pipe" [toggleable]="true">
+        <pre *ngIf="!(myOb | async)"> Resolviendo Observable</pre>
+          <pre>{{myOb | async}}</pre>
+
+          <pre *ngIf="!(myProm | async)"> Resolviendo Promesa</pre>
+          <pre>{{myProm | async}}</pre>
 
     </p-fieldset>
   </div>

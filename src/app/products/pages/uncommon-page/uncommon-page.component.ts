@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, resolveForwardRef } from '@angular/core';
+import { Observable, interval, tap } from 'rxjs';
 
 @Component({
   selector: 'app-uncommon-page',
@@ -30,8 +31,25 @@ export class UncommonPageComponent {
   '=2':'2 perros por bañar',
   'other':'# perros por bañar'
   }
-
   public DeleteClient():void {
     this.dogs.shift();
   }
+
+  //KeyValue
+  public person ={
+    name:'Giselle',
+    age:23,
+    address:'CDMX,CDMX'
+  }
+
+  //Async si puede cancelar observables, la promesa no
+    public myOb:Observable<number>=interval(2000).pipe(
+      tap( value => console.log('tap:', value))
+    );
+
+    public myProm:Promise<string> = new Promise((resolve, reject) =>{
+      setTimeout(()=>{
+        resolve('Tenemos data en la promesa')
+      }, 3500);
+    })
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Color, Hero } from '../../interfaces/hero.innterface';
+import { Color, Hero } from '../../interfaces/hero.interface';
 
 @Component({
   selector: 'app-order',

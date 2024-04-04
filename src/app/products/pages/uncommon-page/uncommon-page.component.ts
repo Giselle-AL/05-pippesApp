@@ -47,9 +47,9 @@ export class UncommonPageComponent {
       tap( value => console.log('tap:', value))
     );
 
-    public myProm:Promise<string> = new Promise((resolve, reject) =>{
-      setTimeout(()=>{
-        resolve('Tenemos data en la promesa')
-      }, 3500);
-    })
+    // public myProm:Promise<string> = new Promise((resolve, reject) =>{
+    //   setTimeout(()=>{
+    //     resolve('Tenemos data en la promesa')
+    //   }, 3500);
+    // })
 }
